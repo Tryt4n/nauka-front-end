@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <meta name="author" content="trytan">
+    <link rel="shortcut icon" type="image/x-icon" href="zdjęcia/logourl.png">
+    <link rel="stylesheet" href="style.kontakt.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.homepage.html"> <img class="logo" src="zdjęcia/logo.png" alt="Nie można wyświetlić obrazu" width="250.5" height="55.5" title="Powrót na stronę główną"></a>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.rowery.html">Rowery</a></li>
+                <li>
+                    <a href="index.akcesoria.html">Akcesoria</a>
+                </li>
+                <li>
+                    <a href="index.wyprzedaż.html">Wyprzedaż</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="kontakt">Masz Jakieś pytania? Skontaktuj się z nami.
+        </h1>
+
+        <div>
+            <form id="kontaktform" method="POST" action="">
+                <input type="text" name="Imie" class="kontaktform" placeholder="Twoje Imie" required><br>
+                <input type="email" name="email" class="kontaktform" placeholder="Twój e-mail kontaktowy" required><br>
+                <textarea name="wiadomość" class="kontaktform" placeholder="Napisz do nas" rows="10" required></textarea><br>
+                <input type="submit" class="kontaktform-wyślij" value="Wyślij wiadomość" title="Naciśnij aby wysłać">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Rowerek.pl &copy; ul. Bajkowa 12-345 Warszawa Nr tel: (+48) 123-456-789</p>
+    </footer>
+
+</body>
+
+</html>

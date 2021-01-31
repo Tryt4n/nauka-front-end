@@ -1,0 +1,121 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: #24252A;
+    }
+    
+    html {
+        height: 100%;
+    }
+    
+    li,
+    a,
+    button,
+    form,
+    .kontaktform,
+    .kontaktform-wyślij {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #edf0f1;
+        text-decoration: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+    }
+    
+    .logo {
+        cursor: pointer
+    }
+    
+    .navbar {
+        list-style: none;
+    }
+    
+    .navbar li {
+        display: inline-block;
+        padding: 0px 20px;
+    }
+    
+    .navbar li a {
+        transition: all 0.3s ease 0s;
+    }
+    
+    .navbar li a:hover {
+        color: #0088a9;
+    }
+    
+    button {
+        padding: 9px 25px;
+        background-color: rgba(0, 136, 169, 1);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    button:hover {
+        background-color: rgba(0, 136, 169, 0.8);
+    }
+    
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer {
+        display: flex;
+        margin-top: auto;
+        padding: 50px 0px 10px 20px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    main {
+        text-align: center;
+    }
+    
+    .kontakt {
+        font-size: 32px;
+        line-height: 100px;
+    }
+    
+    form {
+        margin-top: 50px;
+    }
+    
+    .kontaktform {
+        width: 600px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid gray;
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    
+    input {
+        height: 45px;
+    }
+    
+    .kontaktform-wyślij {
+        padding: 9px 25px;
+        background-color: rgba(0, 136, 169, 1);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .kontaktform-wyślij:hover {
+        background-color: rgba(0, 136, 169, 0.8);
+    }

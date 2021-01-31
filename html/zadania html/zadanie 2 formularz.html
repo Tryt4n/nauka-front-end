@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marcin Jaczewski">
+    <meta name="keywords" content="ankieta, badanie, opinii">
+    <meta name="robots" content="none">
+    <link rel="shortcut icon" type="image/x-icon" href="zdjęcia/ikona formularza.png">
+    <title>Badanie form spędzania czasu wolnego</title>
+</head>
+
+<body>
+    <form>
+        <h1>Badanie form spędzania czasu wolnego</h1>
+
+        <h2>Pytania metryczkowe</h2>
+        <div>
+            <label for="wiek">Podaj swój wiek.</label>
+            <input type="number" id="wiek" min="0" max="99">
+        </div>
+        <br>
+        <div>
+            <p>Wybierz płeć.</p>
+            <input type="radio" id="men" name="płeć">
+            <label for="men">Mężczyzna.</label>
+            <input type="radio" id="woman" name="płeć">
+            <label for="woman">Kobieta</label>
+        </div>
+        <br>
+
+        <div>
+            <p>Wielkość miejscowości zamieszkania.</p>
+            <select name="wielkość miejscowości">
+                <option value="0" selected></option>
+                <optgroup label="gmina wiejska">
+                    <option value="1">poniżej 1 000</option>
+                    <option value="2">1 000-5 000</option>
+                </optgroup>
+                <optgroup label="gmina miejsko-wiejska">
+                    <option value="1">1 000-5 000</option>
+                    <option value="2">5 000-10 000</option>
+                    <option value="3">10 000-25 000</option>
+                    <option value="4">25 000-50 000</option>
+                    <option value="5">50 000-100 000</option>
+                </optgroup>
+                <optgroup label="gmina miejska">
+                    <option value="1">5 000-10 000</option>
+                    <option value="2">10 000-25 000</option>
+                    <option value="3">25 000-50 000</option>
+                    <option value="4">50 000-100 000</option>
+                    <option value="5">100 000-250 000</option>
+                    <option value="6">250 000-500 000</option>
+                    <option value="7">500 000-1 000 000</option>
+                    <option value="8">powyżej 1mln</option>
+                </optgroup>
+            </select>
+        </div>
+        <br>
+        <h2>Pytania o formy spędzania czasu wolnego</h2>
+        <div>
+            <label for="czas wolny"><i>Ile czasu wolnego posiadasz dziennie?</i></label>
+            <input type="text" id="czas wolny" placeholder="Podaj w godzinach">
+        </div>
+        <br>
+        <div>
+            <label for="ksiązki"><i>Ile książek przeczytałeś/aś w ciągu ostatniego roku?</i></label>
+            <input type="number" id="ksiązki" min="0">
+        </div>
+        <br>
+        <div>
+            <i>W jaki sposób spędzasz czas wolny? (wybiersz wszystkie pasujące odpowiedzi)</i> <br>
+            <input type="checkbox" id="TV">
+            <label for="TV">TV</label>
+            <input type="checkbox" id="interner">
+            <label for="internet">przeglądanie internetu</label>
+            <input type="checkbox" id="książka">
+            <label for="książka">czytanie książek</label>
+            <input type="checkbox" id="wychodzenie">
+            <label for="wychodzenie">wyjście ze znajomymi</label>
+            <input type="checkbox" id="spacer">
+            <label for="spacer">chodzenie na spacer</label>
+            <input type="checkbox" id="gotowanie">
+            <label for="gotowanie">gotowanie</label>
+            <input type="checkbox" id="fizyczne">
+            <label for="fizyczne">siłownia</label>
+
+            <input type="checkbox" id="sport">
+            <label for="sport">sport</label>
+            <input type="text" id="sportjaki" placeholder="jaki?">
+
+            <input type="checkbox" id="inne">
+            <label for="inne">inne</label>
+            <input type="text" placeholder="co innego?">
+        </div>
+        <br>
+        <div>
+            <label for="zainteresowania"><i>Ile godzin tygodniowo poświęcasz na rozwój zainteresowań?</i></label>
+            <input type="number" id="zainteresowania" min="0">
+        </div>
+        <br>
+        <div>
+            <label for="aktywność"><i>Ile godzin tygodniowo poświęcasz na aktywność fizyczną?</i></label>
+            <input type="number" id="aktywność" min="0">
+        </div>
+        <br>
+        <div>
+            <label for="spotkania"><i>Ile godzin tygodniowo poświęcasz na spotkania ze znajomymi?</i></label>
+            <input type="number" id="spotkania" min="0">
+        </div>
+        <br>
+        <div>
+            <label for="z kim"><i>Z kim zazwyczaj spędzasz wolny czas? (np. z rodziną/ze znajomymi/sam(a))</i></label>
+            <input type="text" id="z kim">
+        </div>
+        <br>
+        <div>
+            <label for="nudy"><i>W skali 5 stopniowej określ czy często nudzisz się w czasie wolnym?</i></label><br>1
+            <input type="range" step="1" id="nudy" min="1" max="5">5
+        </div>
+        <br>
+        <div>
+            <label for="atrakcje"><i>W skali 5 stopniowej określ czy Twoja miejscowość posiada wystarczająco dużo atrakcji, odpowiednich do realizacji zainteresowań?</i></label><br> 1
+            <input type="range" step="1" id="atrakcje" min="1" max="5">5
+        </div>
+    </form>
+</body>
+
+</html>
