@@ -1,0 +1,22 @@
+    .pp {
+        display: flex;
+        background-color: red;
+    }
+    
+    @media all and (max-width: 500px) {
+        .pp {
+            flex-direction: column;
+        }
+    }
+    
+    @media all and (min-width: 801px) {
+        .pp {
+            flex-direction: row;
+        }
+    }
+    
+    @media all and (min-width: 501px) and (max-width: 800px) {
+        .pp {
+            flex-direction: row-reverse;
+        }
+    }

@@ -1,0 +1,383 @@
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/*Importowanie styli
+            media queries (trzeci przypadek)
+            typy media:
+            all - wszystkie poniższe razem,
+            print - widoki do druku,
+            screen - ekrany urządzeń,
+            speech - czytniki tekstu np. dla osób z problemami ze wzrokiem */
+
+@import "/css/buttons.css";
+@import url("/css/typography.css");
+@import "/css/grid.css" screen and (min-width: 640px);
+
+/*SELEKTORY służą do określania, do jakich elementów zaaplikowane będą reguły. Dostępne selektory:
+            * - uniwersalny selektor oznaczający "wszystko", właściwości zostaną zmienione w każdym elemencie w dokumencie,
+            element - selektor elementu, np. div - oznacza wszystkie elementy "div",
+            #identyfikator selektor identyfikatora, np. #wyslij - element zawierający identyfikator "wyslij". Unikaj stylowania po identyfikatorach. Identyfikatory służą do jednoznacznej identyfikacji tego jednego, konkretnego elementu w dokumencie. Dobrą praktyką jest pisanie CSS tak aby był uniwersalny i możliwy do zaaplikowania w wielu miejscach, w których zachodzi taka potrzeba.
+            .klasa selektor klasy, np. .primary-color - wszystkie elementy zawierające klasę "primary-color". Jest to najważniejszy z selektorów. Współcześnie styluje się elementy po klasach (atrybut class="") i stylując w przyszłości elementy w głównej mierze będziesz stylować z wykorzystaniem klas.
+            :pseudoklasa selektor pseudoklasy np. :active - elementy aktywne, :hover - elementy po najechaniu kursorem itd.
+            ::pseudoelement selektor pseudoelementu, np. ::after - wszystkie pseudoelementy "after",
+            [atrybut] - selektor atrybutu, np. [atrybut='wartosc'] - wszystkie elementy ze zdefiniowanym atrybutem i wartością,
+    Selektory można ze sobą łączyć na różne sposoby np.
+            elementA > elementB - zostanie zaaplikowane do elementów B będących dzieckiem elementu A (są bezpośrednio wewnątrz elementu A),
+            elementA elementB - zostanie zaaplikowane do elementów B będących wewnątrz elementu A,
+            elementA + elementB - zostanie zaaplikowane do elementów B będących w strukturze bezpośrednio po elemencie A,
+            elementA ~ elementB - zostanie zaaplikowane do elementów B poprzedzonych w strukturze elementem A,
+            selektorA, selektorB - zostanie zaaplikowane zarówno do selektora A jak i selektora B,
+            element.klasa - zostanie zaaplikowane tylko do elementów określonego typu z konkretną klasą */
+
+
+/* BOX MODEL- opisuje różne właściwości związane z wymiarami, które posiadają wszystkie elementy
+    Kolejne fragmenty box modelu (od wewnątrz):
+            content - zawartość (właściwości width i height),
+            padding - odstępy wewnętrzne brzegów od treści,
+            border - obramowanie,
+            margin - odstępy zewnętrzne między elementami
+    Kolejność definiowania właściwości jest istotna: góra, prawo, dół, lewo dla czterech wartości, lub pion i poziom przy dwóch wartościach. */
+
+
+/* Do właściwości dziedziczonych zaliczamy przede wszystkim te związane z fontem:
+            color (kolor fontu),
+            text-align (wyrównanie),
+            font-style (style fontu),
+            font-family (nazwa fontu / jej rodzina czyli grupa fontów)[czcionka],
+            font-size (rozmiar),
+            font-weight (pogrubienie / wytłuszczenie),
+            text-decoration (dodatkowe efekty fontu jak np. podkreślenie), */
+
+.parent {
+    color: brown;
+    font-size: 100px;
+    text-align: none;
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.outer {
+    color: green;
+    text-align: center;
+}
+
+.outer2 {
+    color: hotpink;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.outer3 {
+    color: purple;
+    margin: 20px;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+
+/* JEDNOSTKI MIARY
+        WZGLĘDNE jednostki miary są punktem odniesienia do innego wymiaru.
+            em - odniesienie do rozmiaru tekstu w elemencie (1 = 100%),
+            rem - odniesienie do rozmiaru tekstu w elemencie html (1 = 100%),
+            vw - odniesienie do szerokości rzutni (wymiaru obszaru, który renderuje HTML) (1 = 1%),
+            vh - w odniesieniu do wysokości rzutni (1 = 1%),
+            % - w odniesieniu do elementu nadrzędnego (rodzica) (1 = 1%),
+                Rzadziej używane:
+            vmin - mniejsza z wartości vw, vh ( 1 = 1%),
+            vmax - większa z wartości vw, vh (1 = 1%),
+            lh - w odniesieniu do wysokości linii (1 = 100%),
+
+        BEZWZGLĘDNE (absolutne) jednostki miary informują o dokładnych wymiarach.
+            px - piksel,
+                Poniższe są niezwykle rzadko używane:
+            mm - milimetr,
+            cm - centymetr,
+            in - cal,
+            q - część czwarta milimetra,
+            pt - punkt drukarski,
+            pc - cycero poligraficzne   */
+
+.outer4 {
+    width: 20vw;
+    background-color: yellow;
+}
+
+.outer5 {
+    width: 50vw;
+    background-color: yellow;
+}
+
+.outer6 {
+    width: 100vw;
+    background-color: yellow;
+}
+
+.outer7 {
+    width: 20vh;
+    background-color: yellow;
+}
+
+.outer8 {
+    width: 50vh;
+    background-color: yellow;
+}
+
+.outer9 {
+    width: 100vh;
+    background-color: yellow;
+}
+
+.outer10 {
+    height: 16px;
+}
+
+.outer11 {
+    height: 14px;
+}
+
+
+/* HIERARCHIA KASKAD (od najmniej do najbardziej istotnej)
+                domyślne style przeglądarki (różne przeglądarki, posiadają różne wartości niektórych właściwości),
+                zewnętrzne arkusze stylów,
+                wewnętrzne arkusze stylów osadzone w znacznikach <style></style> ,
+                reguły inline wewnątrz atrybutu style="" elementu   */
+
+
+/* FONTY
+            Dostępne fonty generyczne to:
+                serif,
+                sans-serif,
+                monospace,
+                cursive,
+                fantasy */
+
+@font-face {
+    font-family: "font1";
+    src: url("fonty/AlexBrush-Regular.ttf") format("truetype");
+}
+
+
+/*  text-align
+                start,
+                end,
+                left,
+                right,
+                center,
+                justify,
+                justify-all,
+                match-parent,
+        font-weight:
+                normal = 400,
+                bold = 700,
+                bolder = waga cięższa o 1 poziom niż waga rodzica,
+                lighter = waga lżejsza o 1 poziom niż waga rodzica 
+        font-stretch (szerokość kroju fonta)
+                normal,
+                węższe:
+                semi-condensed,
+                condensed,
+                extra-condensed,
+                ultra-condensed,
+                szersze:
+                semi-expanded,
+                expanded,
+                extra-expanded,
+                ultra-expanded,
+                względne:
+                wider - krój o jeden poziom szerszy niż rodzica,
+                narrower - krój o jeden poziom węższy niż rodzica
+        text-transform
+                uppercase - zamienia wszystkie litery na duże,
+                lowecase - zamienia wszystkie litery na małe,
+                capitalize - pierwsza litera duża w wyrazie duża, pozostałe małe, 
+        line-height (wysokość linii oddzielającej kolejne wiersze tekstu)
+        letter-spacing (odstęp między literami)
+        word-spacing (odstęp między wyrazami)
+        text-indent (wcięcie w pierwszym wierszu tekstu)
+        text-shadow (cienie do tekstu, które przyjmują kolejno: przesunięcie poziome, pionowe, rozmycie i kolor np. "text-shadow: 5px 5px 5px #000;")
+        "color: rgb (red, green, blue);"
+        "color: rgba (red, green, blue, alfa;"[0 = maksymalnie przezroczyste, 1 = maksymalnie widoczne]) 
+        "color: hsl (120, 100%, 50%);" {hue[odcień], saturation[nasycenie], lightness[jasność]}
+        */
+
+.font1 {
+    font-family: "font1";
+    font-size: 50px;
+    background-color: darkgoldenrod;
+    color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: underline blue;
+    line-height: 70px;
+    letter-spacing: 2.5px;
+    word-spacing: 1cm;
+}
+
+
+/* WŁAŚCIWOŚCI TŁA
+                background-color - jako wartość przyjmuje kolor tła do ustawienia,
+                background-image - jako wartość przyjmuje adres url do obrazu, który ma zostać wyświetlony w tle,
+                background-size - wymiary obrazu tła np. liczbowe lub "contain", "cover",
+                background-repeat - w jaki sposób obraz tła ma się powtarzać, dostępne wartości to:
+                no-repeat - bez powtarzania,
+                repeat - powtarzaj w osi x i y,
+                repeat-x - powtarzaj w osi x,
+                repeat-y - powtarzaj w osi y,
+                background-position - pozycja obrazu tła,
+                background - jako wartość przyjmuje kolor tła, adres url do obrazu, wyrównanie tła, powtarzanie tła i gradient rozdzielone spacjami,
+        */
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: chocolate;
+    padding: 30px;
+    margin: 30px;
+}
+
+.flex1 {
+    display: flex;
+    justify-content: center;
+}
+
+.flex2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* FLEXBOX (z ang. flexible-box) to jeden z dostępnych modeli pudełkowych (z ang. box-model). Służy do projektowania układu elementów na stronie lub w aplikacji. Charakterystyką flexbox jest rozmieszczanie elementów w dokumencie w wybranym kierunku: w rzędzie lub kolumnie.
+            flex-direction (definiuje w którą stronę rozmieszczone są elementy)
+                row: Elementy zostaną rozmieszczone tak jak tekst.
+                row-reverse: Elementy zostaną rozmieszczone odwrotnie do kierunku tekstu.
+                column: Elementy zostaną rozmieszczone od góry do dołu.
+                column-reverse: Elementy zostaną rozmieszczone od dołu do góry.
+            flex-wrap (zachowanie elementów w momencie gdy przestaną mieścić się w rzędzie lub kolumnie)
+                nowrap - nie przeność do następnego rzędu lub kolumny,
+                wrap - przenieś do następnego rzędu lub kolumny,
+                wrap-reverse - przenieś element do kolumny lub rzędu nad obecnym rzędem lub kolumną
+                        flex-flow (flex-direction i flex-wrap w jednym)
+            justify-content (rozmieszczenie elementów w rzędzie lub kolumnie w momencie gdy znajduje się wolna przestrzeń)
+                flex-start - elementy wyrównane do początku,
+                flex-end - elementy wyrównane do końca,
+                center - elementy wyrónane do środka,
+                space-between - elementy wyrównane jednocześnie do początku, końca i środka, a pomiędzy nimi równe odstępy,
+                space-around - podobnie jak w przypadku space-between wyrównuje, jednak dodatkowo (nierówna) przestrzeń znajduje się na początku i końcu,
+                space-evenly - podobne jak space-around jednak przestrzeń między elementami, a także na początku i końcu jest równa,
+            align-items (określa jak wyrównują się elementy wewnątrz, w osi poprzecznej (z ang. cross axis). Wyrównanie tylko jednego elementu odbywa się przy pomocy align-self)
+                flex-start - do początku,
+                flex-end - do końca,
+                center - wyśrodkowanie,
+                stretch - rozciągnięcie między początkiem i końcem,
+                baseline - utrzymanie zawartości na równym poziomie,
+            order - czasami odwracanie wierszy i kolumn kontenera nie wystarcza. W takich przypadkach, możemy zastosować własność order do pojedynczego elementu. Domyślnie elementy mają wartość 0, ale przy pomocy tej własności możemy ustalić kolejność na dowolną dodatnią lub ujemną wartość. https://flexboxfroggy.com/#pl
+            align-content (align-content określa odstępy między wierszami podczas, gdy align-items określa jak elementy, jako całość, wyrównują się względem kontenera. W przypadku, gdy jest tylko jedna linia, align-content nie przynosi żadnego efektu)
+                flex-start: Wiersze upychają u góry kontenera.
+                flex-end: Wiersze upychają się w dolnej części kontenera.
+                center: Wiersze upychane są pośrodku kontenera.
+                space-between: Wiersze wyświetlane są z równymi odstępami.
+                space-around: Wiersze wyświetlane są z równymi odstępami dookoła.
+                stretch: Wiersze rozszerzają się tak, aby dopasować się do kontenera.
+            */
+
+.transition1 {
+    background-color: blue;
+    transition: all 500ms;
+    font-family: "font1";
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    color: rgb(238, 255, 0);
+    word-spacing: 10px;
+}
+
+.transition1:hover {
+    background-color: red;
+    text-align: end;
+    font-size: 50px;
+    margin: 5px;
+    padding: 5px;
+    color: rgb(0, 255, 13);
+    word-spacing: 20px;
+    font-family: sans-serif;
+}
+
+
+/*transition (przejście z stanu 1 na stan 2)*/
+
+@keyframes animacja {
+    0% {
+        background-color: rgb(255, 255, 255);
+        transition: all 500ms;
+        font-family: "font1";
+        text-align: center;
+        font-size: 30px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        color: rgb(238, 255, 0);
+        word-spacing: 10px;
+    }
+    25% {
+        background-color: rgb(0, 247, 255);
+    }
+    50% {
+        background-color: rgb(0, 183, 255);
+    }
+    75% {
+        background-color: rgb(0, 68, 255);
+    }
+    100% {
+        background-color: rgb(4, 0, 255);
+    }
+}
+
+.animacja1 {
+    animation: animacja 6s infinite;
+}
+
+
+/*@keyframes (klatki kluczowe)
+                        @keyframes nazwa_animacji następnie procentowo stan przejścia oraz przypisane do każdego stanu wartości
+                        Wykorzystanie zapisanej animacji poprzez utworzenie selektora (standardowy selektor tak jak wyżej) 
+                            nazwa_selektora{animation: nazwa_wcześniej_utowrzonej_animacji_z_@keyframes czas trwania przejścia animacji ilość powtórzeń;}
+                        */
+
+.pp {
+    background-color: red;
+}
+
+@media all and (min-width: 400px) and (max-width: 700px),
+ball and (min-width: 1200px) and (max-width: 1400px) {
+    .pp {
+        background-color: blue;
+    }
+}
+
+
+/* MEDIA QUERIES służą do zaaplikowania reguł tylko gdy spełnione są pewne warunki. Słowo and jest tutaj używane jako operator i, przecinek jako operator lub, słowo not jako negacja.
+                        formy prezentowania:
+                            screen - ekrany urządzeń,
+                            print - wydruk i wydruków,
+                            speech - czytniki TTS,
+                            all - wszystko  */
